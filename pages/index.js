@@ -41,12 +41,15 @@ export default function Home({ exploreData, cardData }) {
         <section>
           <h2 className="text-4xl font-semibold py-8">Live Anywhere</h2>
 
+
+                  {/* Had to import a tailwind plugin (npm install scrollbar-hide and install in tailwind.configure.js) to scroll to hide scroll bar */}
           <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3">
-            {cardData.map(({ img, title }) => (
-              <MedCard img={img} title={title} />
+            {cardData?.map(({ img, title }) => (
+              <MedCard key={img} img={img} title={title} />
             ))}
           </div>
         </section>
+        
         <LargeCard
           img="https://links.papareact.com/4cj"
           title="The Greatest Outdoors"
